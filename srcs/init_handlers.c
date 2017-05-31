@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+ /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   init_handlers.c                                    :+:      :+:    :+:   */
@@ -15,7 +15,7 @@
 static void	init_handlers(t_handler *handlers)
 {
 	handlers['%'] = &percent_handler;
-	handlers['C'] = &wchar_handler;
+	handlers['C'] = &char_handler;
 	handlers['D'] = &long_handler;
 	handlers['O'] = &long_handler;
 	handlers['S'] = &wstr_handler;
