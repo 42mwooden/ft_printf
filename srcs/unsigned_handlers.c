@@ -15,7 +15,7 @@
 static void	conv_put(uintmax_t num, char *base, t_flag *flag, unsigned num_len)
 {
 	if (flag->has_preci && flag->pad_right)
-		pad_width(my_greater(flag->preci, flag->width), ' ', num_len + flag->preci);
+		pad_width(my_greater(flag->preci, flag->width), ' ', flag->preci);
 	if (flag->has_preci)
 		pad_width(flag->preci, base[0], num_len);
 	if (num == 0 && flag->has_preci && flag->preci == 0)
