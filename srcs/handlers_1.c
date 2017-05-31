@@ -74,6 +74,6 @@ ssize_t	float_handler(char **fmt, va_list *args, t_flag *flag)
 	(void)flag;
 	num = (float)va_arg(*args, double);
 	(void)num;
-	ft_putstr("Float");
+	ft_putstr("(float)");
 	return(0);
 }
