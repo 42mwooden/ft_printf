@@ -18,7 +18,7 @@
 
 typedef struct	s_flag
 {
-	int			pound_conv : 1;
+	int			force_sharp : 1;
 	int			pad_zero : 1;
 	int			pad_right : 1;
 	int			force_sign : 1;

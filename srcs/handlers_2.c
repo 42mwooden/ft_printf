@@ -46,7 +46,7 @@ ssize_t	octal_handler(char **fmt, va_list *args, t_flag *flag)
 
 	(void)fmt;
 	num = convert_unsigned(args, flag);
-	if (flag->force_sign && num == 0 && flag->has_preci && flag->preci == 0)
+	if (flag->force_sharp && num == 0 && flag->has_preci && flag->preci == 0)
 	{
 		if (flag->has_width && !flag->pad_right)
 			pad_width(flag->width, flag->pad_zero ? '0' : ' ', 1);
@@ -55,7 +55,7 @@ ssize_t	octal_handler(char **fmt, va_list *args, t_flag *flag)
 			pad_width(flag->width, ' ', 1);
 		return (flag->has_width ? my_greater(flag->width, 1) : 1);
 	}
-	else if (flag->force_sign && num != 0)
+	else if (flag->force_sharp && num != 0)
 	{
 		flag->has_preci = 1;
 		flag->preci = my_greater(flag->preci, numlen(num, "01234567") + 1);
@@ -74,5 +74,5 @@ ssize_t	ptr_handler(char **fmt, va_list *args, t_flag *flag)
 		flag->pad_zero = 0;
 	base = "0123456789abcdef";
 	num = convert_unsigned(args, flag);
-	return (sign_forcer(num, base, flag, "0x"));
+	return (prefix_forcer(num, base, flag, "0x"));
 }

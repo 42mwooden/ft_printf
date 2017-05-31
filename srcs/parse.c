@@ -102,7 +102,7 @@ char	*parse_flag(char **fmt, t_flag *flag)
 		**fmt == '+' || **fmt == ' ')
 	{
 		if (**fmt == '#')
-			flag->pound_conv = 1;
+			flag->force_sharp = 1;
 		else if (**fmt == '0')
 			flag->pad_zero = 1;
 		else if (**fmt == '-')

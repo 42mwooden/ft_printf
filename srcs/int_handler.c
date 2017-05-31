@@ -56,7 +56,7 @@ ssize_t	int_handler(char **fmt, va_list *args, t_flag *flag)
 			sign = " ";
 		else
 			sign = "";
-		return (sign_forcer(num, "0123456789", flag, sign));
+		return (prefix_forcer(num, "0123456789", flag, sign));
 	}
 	else
 		return (uint_handler(num, flag, "0123456789", NULL));
