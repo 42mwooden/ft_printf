@@ -38,7 +38,8 @@ SRCS =\
 		libft/my_putnbr_base_fd.c\
 		libft/my_putwchar_fd.c\
 		libft/my_putnstr_fd.c\
-		libft/ft_putchar_fd.c
+		libft/ft_putchar_fd.c\
+		libft/ft_putnbr.c
 
 OBJS = $(SRCS:.c=.o)
 
