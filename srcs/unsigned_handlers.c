@@ -37,7 +37,7 @@ ssize_t		uint_handler(uintmax_t num, t_flag *flag, char *base, char *sign)
 	}
 */	str_len = find_strlen_num(num, base, sign, flag);
 	if (flag->has_width && !flag->pad_right)
-		pad_width(flag->width, ' ', str_len);
+		pad_width(flag->width, ' ', num_len);
 	conv_put(num, base, flag, num_len);
 	if (flag->has_width && flag->pad_right)
 		pad_width(flag->width, ' ', str_len);
