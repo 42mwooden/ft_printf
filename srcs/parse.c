@@ -109,7 +109,7 @@ char	*parse_flag(char **fmt, t_flag *flag)
 			flag->pad_right = 1;
 		else if (**fmt == '+')
 			flag->force_sign = 1;
-		else if (**fmt == '0')
+		else if (**fmt == ' ')
 			flag->blank_sign = 1;
 		(*fmt)++;
 		if (flag->pad_right)
