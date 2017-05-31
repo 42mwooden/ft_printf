@@ -82,7 +82,7 @@ char	*parse_width(char **fmt, t_flag *flag, va_list *args)
 			check = va_arg(*args, int);
 			if (check < 0)
 				flag->pad_right = 1;
-			flag->width += check < 0 ? -check : check;
+			flag->width = check < 0 ? -check : check;
 			flag->has_width = 1;
 		}
 		else if (ft_isdigit(**fmt))

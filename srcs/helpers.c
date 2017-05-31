@@ -89,7 +89,7 @@ ssize_t		sign_forcer(uintmax_t num, char *base, t_flag *flag, char *sign)
 	num_trim = ft_strlen(sign);
 	if (flag->has_width && !flag->pad_right && !flag->pad_zero)
 	{
-		pad_width(num_len, flag->width, ' ');
+		pad_width(flag->width, ' ', num_len);
 		num_trim += my_greater(flag->width - num_len, 0);
 		flag->has_width = 0;
 	}

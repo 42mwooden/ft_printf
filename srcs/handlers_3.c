@@ -38,10 +38,10 @@ ssize_t	str_handler(char **fmt, va_list *args, t_flag *flag)
 		str_len = flag->has_preci ? my_lesser(flag->preci, ft_strlen(str)) :
 			ft_strlen(str);
 		if (flag->has_width && !flag->pad_right)
-			pad_width(str_len, flag->width, flag->pad_zero ? '0' : ' ');
+			pad_width(flag->width, flag->pad_zero ? '0' : ' ', str_len);
 		my_putnstr(str, str_len);
 		if (flag->has_width && flag->pad_right)
-			pad_width(str_len, flag->width, ' ');
+			pad_width(flag->width, ' ', str_len);
 		return (flag->has_width ? my_greater(flag->width, str_len) : str_len);
 	}
 }
