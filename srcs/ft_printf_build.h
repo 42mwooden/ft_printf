@@ -61,7 +61,7 @@ uint32_t	numlen(uintmax_t num, char *base);
 
 uint32_t	find_strlen_num(uintmax_t num, char *base, char *ptr, t_flag *flag);
 
-ssize_t		sign_forcer(uintmax_t num, char *base, t_flag *flag, char *sign);
+ssize_t		prefix_forcer(uintmax_t num, char *base, t_flag *flag, char *sign);
 
 /*
 ** Handlers
