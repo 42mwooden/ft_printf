@@ -41,7 +41,7 @@ uint32_t	find_strlen_num(uintmax_t num, char *base, char *ptr, t_flag *flag)
 		str_len = my_greater(num_len, flag->preci);
 	else
 		str_len = num_len;
-	if (flag->force_sign && ptr != NULL && num != 0)
+	if (flag->force_sharp && ptr != NULL && num != 0)
 		str_len += ft_strlen(ptr);
 	return (str_len);
 }
@@ -77,13 +77,13 @@ void		pad_width(int width, char pad_with, int num)
 	}
 }
 
-ssize_t		sign_forcer(uintmax_t num, char *base, t_flag *flag, char *sign)
+ssize_t		prefix_forcer(uintmax_t num, char *base, t_flag *flag, char *prefix)
 {
 	unsigned	num_len;
 	size_t		num_trim;
 
-	num_len = find_strlen_num(num, base, NULL, flag) + ft_strlen(sign);
-	num_trim = ft_strlen(sign);
+	num_len = find_strlen_num(num, base, NULL, flag) + ft_strlen(prefix);
+	num_trim = ft_strlen(prefix);
 	if (flag->has_width && !flag->pad_right && !flag->pad_zero)
 	{
 		pad_width(flag->width, ' ', num_len);
@@ -91,7 +91,7 @@ ssize_t		sign_forcer(uintmax_t num, char *base, t_flag *flag, char *sign)
 		flag->has_width = 0;
 	}
 	else if (flag->has_width)
-		flag->width -= ft_strlen(sign);
-	ft_putstr(sign);
+		flag->width -= ft_strlen(prefix);
+	ft_putstr(prefix);
 	return (uint_handler(num, flag, base, NULL) + num_trim);
 }
