@@ -68,7 +68,7 @@ uintmax_t	convert_unsigned(va_list *args, t_flag *flag)
 	return (num);
 }
 
-void		pad_width(int width, int num, char pad_with)
+void		pad_width(int width, char pad_with, int num)
 {
 	while (num < width)
 	{

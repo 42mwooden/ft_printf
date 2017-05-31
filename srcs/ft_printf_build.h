@@ -55,7 +55,7 @@ char		*parse_len(char **fmt, t_flag *flag);
 */
 uintmax_t	convert_unsigned(va_list *args, t_flag *flag);
 
-void		pad_width(int width, int num, char pad_with);
+void		pad_width(int width, char pad_with, int num);
 
 uint32_t	numlen(uintmax_t num, char *base);
 
