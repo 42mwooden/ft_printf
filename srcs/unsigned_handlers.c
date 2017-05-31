@@ -30,12 +30,16 @@ ssize_t		uint_handler(uintmax_t num, t_flag *flag, char *base, char *sign)
 	if (flag->has_preci)
 		flag->pad_zero = 0;
 	num_len = numlen(num, base);
-/*	if (flag->has_width && !flag->pad_zero)
+	if (flag->has_width && !flag->pad_zero)
 	{
 		if (flag->has_preci)
-			flag->preci = my_greater(flag->preci, num_len);
+			flag->preci = ft_max(flag->width, flag->preci);
+		else
+			flag->preci = ft_max(flag->width, nbr_len);
+		flag->has_preci = 1;
+		flag->has_width = 0;
 	}
-*/	str_len = find_strlen_num(num, base, sign, flag);
+	str_len = find_strlen_num(num, base, sign, flag);
 	if (flag->has_width && !flag->pad_right)
 		pad_width(flag->width, ' ', flag->has_preci ? flag->preci : str_len);
 	conv_put(num, base, flag, num_len);
