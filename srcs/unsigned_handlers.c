@@ -34,10 +34,7 @@ ssize_t		uint_handler(uintmax_t num, t_flag *flag, char *base, char *sign)
 	{
 		if (flag->has_preci)
 			flag->preci = my_greater(flag->width, flag->preci);
-		else
-			flag->preci = my_greater(flag->width, num_len);
 		flag->has_preci = 1;
-		flag->has_width = 0;
 	}
 	str_len = find_strlen_num(num, base, sign, flag);
 	if (flag->has_width && !flag->pad_right)
