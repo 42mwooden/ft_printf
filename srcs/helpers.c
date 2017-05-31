@@ -70,6 +70,7 @@ uintmax_t	convert_unsigned(va_list *args, t_flag *flag)
 
 void		pad_width(int width, char pad_with, int num)
 {
+	printf("FLAG->WIDTH == %i\n", width);
 	while (num < width)
 	{
 		ft_putchar(pad_with);
