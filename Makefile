@@ -20,7 +20,21 @@ SRCS =\
 		srcs/int_handler.c\
 		srcs/handlers_2.c\
 		srcs/handlers_3.c\
-		srcs/unsigned_handlers.c
+		srcs/unsigned_handlers.c\
+		libft/ft_strchr.c\
+		libft/ft_putstr.c\
+		libft/ft_strlen.c\
+		libft/ft_bzero.c\
+		libft/my_putnstr.c\
+		libft/ft_isdigit.c\
+		libft/ft_memalloc.c\
+		libft/ft_putchar.c\
+		libft/my_greater.c\
+		libft/my_putwchar.c\
+		libft/ft_tolower.c\
+		libft/my_putnwstr.c\
+		libft/my_lesser.c\
+		libft/my_putnbr_base.c
 
 OBJS = $(SRCS:.c=.o)
 
