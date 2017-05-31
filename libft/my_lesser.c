@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		my_greater(int nbr1, int nbr2)
 {
 		return (nbr1 <= nbr2 ? nbr1 : nbr2);
