@@ -37,6 +37,8 @@ uint32_t	find_strlen_num(uintmax_t num, char *base, char *ptr, t_flag *flag)
 	num_len = numlen(num, base);
 	if (num == 0 && flag->has_preci && flag->preci == 0)
 		str_len = 0;
+	else if (flag->has_preci)
+		str_len = my_greater(num_len, flag->preci);
 	else
 		str_len = num_len;
 	if (flag->force_sign && ptr != NULL && num != 0)
@@ -84,7 +86,7 @@ ssize_t		sign_forcer(uintmax_t num, char *base, t_flag *flag, char *sign)
 	num_trim = ft_strlen(sign);
 	if (flag->has_width && !flag->pad_right && !flag->pad_zero)
 	{
-		pad_width(flag->width, ' ', num_len);
+		pad_width(num_len, flag->width, ' ');
 		num_trim += my_greater(flag->width - num_len, 0);
 		flag->has_width = 0;
 	}
